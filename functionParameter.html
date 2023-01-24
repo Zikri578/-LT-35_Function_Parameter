@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Parameter - Javascript</title>
+    <script src="functionParameter.js"></script>
+</head>
+
+<body>
+    <button onclick="sayHello()">Hello</button>
+    <button onclick="calculated()">Perhitungan</button>
+    <button onclick="perhitungan()">Pertambahan</button>
+
+    <script>
+        // membuat function dengan parameter 
+        function sayHello(hello1, hello2) {
+            // input data hello1 dan hello2 menggunakan prompt 
+            hello1 = prompt("Masukkan Nama Depan : ", hello1);
+            hello2 = prompt("Masukkan Nama Belakang : ", hello2);
+
+            // menampilkan output
+            alert(`Hallo Nama Anda ${hello1} ${hello2}`);
+        }
+        // menambahkan value sayHello
+        sayHello();
+
+
+        // melakukan input data menggunakan prompt
+        function calculated(number1, number2) {
+            // input data number1 dan number2 menggunakan parsefloat untuk mengubah tipe data string ke number
+            number1 = parseFloat(prompt("Masukkan Angka Pertama Anda : ", number1));
+            number2 = parseFloat(prompt("Masukkan Angka Kedua Anda : ", number2));
+
+            // membuat variabel operator yang valuenya berupa input data menggunakan prompt
+            let operator = prompt(
+                "Silahkan Pilih Operator yang anda inginkan Tambah(+) atau Kurang(-) atau Kali(*) atau Bagi(/) atau sisa bagi(%) : "
+                );
+
+            // membuat variabel result untuk melakukan perhitungan aritmatika
+            let result = "";
+
+            // melakukan pengkondisian menggunakan swtich
+            switch (operator) {
+                // jika + maka dilakukan perhitungan
+                case "+":
+                    result = number1 + number2;
+                    break;
+                    // jika - maka dilakukan pengurangan
+                case "-":
+                    result = number1 - number2;
+                    break;
+                    // jika * maka dilakukan perkalian
+                case "*":
+                    result = number1 * number2;
+                    break;
+                    // jika / maka dilakukan pembagia
+                case "/":
+                    result = number1 / number2;
+                    break;
+                    // jika % maka dilakukan hasil sisa
+                case "%":
+                    result = number1 % number2;
+                    break;
+                    // selain itu maka operator tersebut tidak ada
+                default:
+                    result = "Operator tidak ada";
+                    break;
+            }
+            // menampilkan hasil di console
+            console.log(`Hasilnya Yaitu : ${result}`);
+        }
+
+        // melakukan operasi perhitungan
+        calculated();
+    </script>
+</body>
+
+</html>
